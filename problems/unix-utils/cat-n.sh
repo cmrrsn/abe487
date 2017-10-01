@@ -1,6 +1,7 @@
 #!/bin/bash
 
 
+FILE=$1
 
 if [[ $# -eq 0 ]]; then
 	
@@ -10,20 +11,24 @@ if [[ $# -eq 0 ]]; then
 
 else
 	
-	if [[ -f "$1" ]]; then
+	if [[ -f $FILE ]]; then
 		
 		i=0
 		
 
 		while read -r LINE; do
+			
 			let i++
+			
 			echo $i $LINE
 	
-		done <"$1"
+		done <"$FILE"
 	else
 		
-		printf "\"%s\" is not a file\n" "$(basename "$1")"
+		printf "\"%s\" is not a file\n" "$(basename "$FILE")"
+		
 		exit 1	
+	
 	fi
 
 fi 
