@@ -23,13 +23,10 @@ def main():
 		print('There are no {}-mers in "{}"'.format(length, seq))
 		sys.exit(1)
 	i = 0
-	stop = len(seq)-length+1
 	kmers = []
-	
 	for bp in seq:
-		if i < stop:
-			temp = seq[i:i+length] 
-			kmers.append(temp)
+		if i < len(seq)-length+1:
+			kmers.append(seq[i:i+length])
 			i += 1
 	counts = dict()
 	for kmer in kmers:
@@ -39,8 +36,6 @@ def main():
 	print('{}'.format(seq))
 	for kmer in sorted(counts.keys()):
 		print('{} {}'.format(kmer, counts[kmer]))
-
-
 
 if __name__ == '__main__':
 	main()
