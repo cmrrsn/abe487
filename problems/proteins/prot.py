@@ -21,14 +21,11 @@ for line in file:
 		procode[prev] = line
 	count+=1
 k=3
-rnapiece = []
-for i in range(0, len(rna), k):
-	rnapiece.append(rna[i:i+k])
 
 protein = []
-for line in rnapiece:
+for i in range(0, len(rna), k):
 	for key in procode.keys():
-		if line.lower() == key.lower():
+		if rna[i:i+k].lower() == key.lower():
 			protein.append(procode[key])
 
 print('{}'.format(''.join(protein)))
