@@ -10,11 +10,9 @@ if len(args) < 3:
     sys.exit(1)
 
 if len(args[1]) >= len(args[2]):
-    seq1 = args[1]
-    seq2 = args[2]
+    seq1, seq2 = args[1], args[2]
 else:
-    seq1 = args[2]
-    seq2 = args[1]
+    seq1, seq1 = args[2], args[1]
 
 ham = len(seq1)-len(seq2)
 count = 0
