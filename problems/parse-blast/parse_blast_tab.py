@@ -12,7 +12,7 @@ def get_args():
     parser.add_argument('-p', '--pct_id', help='Percent Identity',
                         metavar='float', type=float, default=0.0)
     parser.add_argument('-e', '--evalue', help='maximum evalue',
-                        metavar='float', type=float, default=1.0)
+                        metavar='float', type=float, default=10.0)
     return parser.parse_args()
 
 # --------------------------------------------------
